@@ -65,6 +65,16 @@ h1{font:700 clamp(2.2rem,5vw,3.4rem)/1.05 var(--f-display);margin:14px 0 18px;te
 .bar i{display:block;height:100%;width:40%;background:var(--trace-hi);transition:width .3s}
 @media (prefers-reduced-motion:reduce){.dash .rec::before{animation:none}}
 
+/* product gallery */
+.product{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+.product>*{min-width:0}
+.shot{margin:0;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#0b0d0f}
+.shot img{display:block;width:100%;height:auto}
+.shot.main{box-shadow:0 20px 50px -20px rgba(200,16,46,.45)}
+.shot figcaption{font:400 .72rem/1.4 var(--f-mono);color:#99a2a6;padding:8px 12px;background:#14181b;letter-spacing:.04em}
+.pinfo{display:flex;flex-direction:column;gap:16px}
+ul.specs.big{font-size:1rem;display:grid;gap:6px}
+.demo-note{font:400 .72rem/1.4 var(--f-mono);color:var(--muted);margin:16px 0 0}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 section{padding-block:56px;border-top:1px solid var(--line)}
 h2{font:600 1.8rem/1.15 var(--f-display);margin:8px 0 14px;text-wrap:balance}
@@ -87,7 +97,7 @@ footer{border-top:1px solid var(--line);padding-block:24px 36px;color:var(--mute
 
 @media (max-width:820px){
   .hero,.contact{grid-template-columns:1fr}
-  .grid3,.grid2{grid-template-columns:1fr}
+  .grid3,.grid2,.product{grid-template-columns:1fr}
 }
 
 /* Lingua: ogni testo esiste in IT e EN, si mostra quello della lingua scelta */
@@ -139,31 +149,24 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
   </div>
 
   <section id="power-tools">
-    <div class="eyebrow"><span lang="it">Il progetto</span><span lang="en">The project</span></div>
-    <h2><span lang="it">I prodotti Power-Tools</span><span lang="en">Power-Tools products</span></h2>
-    <p class="sec-intro"><span lang="it">Due strumenti che lavorano insieme: uno registra, l'altro mostra. Entrambi si configurano e si aggiornano con il software Power-Tools per PC.</span><span lang="en">Two devices that work together: one records, the other displays. Both are configured and updated with the Power-Tools PC software.</span></p>
-    <div class="grid2">
-      <div class="item">
+    <div class="eyebrow"><span lang="it">Il prodotto</span><span lang="en">The product</span></div>
+    <h2>Drago One</h2>
+    <p class="sec-intro"><span lang="it">Il data logger di Power-Tools: registra le grandezze del veicolo durante l'uso e le porta sul tuo computer per l'analisi, giro dopo giro.</span><span lang="en">The Power-Tools data logger: it records vehicle data while you drive and brings it to your computer for analysis, lap after lap.</span></p>
+    <div class="product">
+      <figure class="shot main"><img src="drago-device.svg" alt="Drago One" width="640" height="400" loading="lazy"></figure>
+      <div class="pinfo">
         <span class="tag live"><span lang="it">In sviluppo</span><span lang="en">In development</span></span>
-        <h3>Drago One</h3>
-        <p><span lang="it">Registra le grandezze del veicolo durante l'uso, per analizzarle poi al computer.</span><span lang="en">Records vehicle data while you drive, for analysis on your computer afterwards.</span></p>
-        <ul class="specs">
+        <ul class="specs big">
           <li><span lang="it">Acquisizione continua dei canali di bordo</span><span lang="en">Continuous acquisition of on-board channels</span></li>
+          <li><span lang="it">Display integrato con giri, tempo sul giro e marcia</span><span lang="en">Built-in display with rpm, lap time and gear</span></li>
           <li><span lang="it">Salvataggio delle sessioni su memoria interna</span><span lang="en">Sessions stored on internal memory</span></li>
-          <li><span lang="it">Scarico e analisi dei dati da PC</span><span lang="en">Download and analysis on PC</span></li>
+          <li><span lang="it">Scarico e analisi dei dati con il software Power-Tools</span><span lang="en">Download and analysis with the Power-Tools software</span></li>
         </ul>
-      </div>
-      <div class="item">
-        <span class="tag live"><span lang="it">In sviluppo</span><span lang="en">In development</span></span>
-        <h3>Power Dash</h3>
-        <p><span lang="it">Display da cruscotto che mostra in tempo reale i valori più importanti.</span><span lang="en">Dashboard display showing the key values in real time.</span></p>
-        <ul class="specs">
-          <li><span lang="it">Pagine e layout personalizzabili</span><span lang="en">Customisable pages and layouts</span></li>
-          <li><span lang="it">Allarmi visivi sulle soglie impostate</span><span lang="en">Visual alarms on configured thresholds</span></li>
-          <li><span lang="it">Collegamento diretto a Drago One</span><span lang="en">Direct link to Drago One</span></li>
-        </ul>
+        <figure class="shot"><img src="drago-data.svg" alt="Analisi dei dati Drago One" width="640" height="400" loading="lazy">
+          <figcaption><span lang="it">Analisi di un giro nel software Power-Tools</span><span lang="en">Lap analysis in the Power-Tools software</span></figcaption></figure>
       </div>
     </div>
+    <p class="demo-note"><span lang="it">Immagini dimostrative: il prodotto finale può essere diverso.</span><span lang="en">Demo images: the final product may differ.</span></p>
   </section>
 
   <section id="download">
