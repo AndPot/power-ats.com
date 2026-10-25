@@ -66,12 +66,30 @@ h1{font:700 clamp(2.2rem,5vw,3.4rem)/1.05 var(--f-display);margin:14px 0 18px;te
 @media (prefers-reduced-motion:reduce){.dash .rec::before{animation:none}}
 
 /* product gallery */
-.product{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+.product{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
 .product>*{min-width:0}
-.shot{margin:0;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#0b0d0f}
-.shot img{display:block;width:100%;height:auto}
-.shot.main{box-shadow:0 20px 50px -20px rgba(200,16,46,.45)}
-.shot figcaption{font:400 .72rem/1.4 var(--f-mono);color:#99a2a6;padding:8px 12px;background:#14181b;letter-spacing:.04em}
+.live{background:var(--trace-bg);color:var(--trace-fg);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 60px -24px rgba(200,16,46,.55)}
+.lhd{display:flex;justify-content:space-between;font:400 .68rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--trace-dim);border-bottom:1px solid #2a3135;padding-bottom:10px}
+.lhd .rec{color:var(--trace-hi)}
+.lhd .rec::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--trace-hi);margin-right:6px;animation:blink 1.2s steps(2) infinite}
+.lrow{display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:center}
+.lrow>*{min-width:0}
+.gauge{position:relative}
+.gauge svg{width:100%;height:auto;display:block}
+.g-bg,.g-fg{fill:none;stroke-width:14;stroke-linecap:round}
+.g-bg{stroke:#22282d}.g-fg{stroke:#ff3b3b;filter:drop-shadow(0 0 6px rgba(255,59,59,.6));transition:stroke-dasharray .12s linear}
+.gv{position:absolute;left:0;right:0;bottom:4px;text-align:center;font:600 2.3rem/1 var(--f-display);font-variant-numeric:tabular-nums}
+.gv small,.ls .v small{font:400 .7rem/1 var(--f-mono);color:var(--trace-dim);margin-left:4px}
+.lstats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ls{border:1px solid #2a3135;border-radius:5px;padding:8px 10px}
+.ls .k{font:400 .62rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--trace-dim)}
+.ls .v{font:600 1.25rem/1.3 var(--f-display);font-variant-numeric:tabular-nums;margin-top:4px}
+.ls .v.best{color:#3ddc84}
+#d-trace{width:100%;height:120px;display:block;border-top:1px solid #2a3135}
+.legend{display:flex;gap:16px;font:400 .66rem/1 var(--f-mono);color:var(--trace-dim);letter-spacing:.06em}
+.legend>span::before{content:"";display:inline-block;width:12px;height:2px;margin-right:6px;vertical-align:middle;background:currentColor}
+.legend .c1{color:#ff4d5e}.legend .c2{color:#e6eaea}.legend .c3{color:#3ddc84}
+@media (max-width:520px){.lrow{grid-template-columns:1fr}}
 .pinfo{display:flex;flex-direction:column;gap:16px}
 ul.specs.big{font-size:1rem;display:grid;gap:6px}
 .demo-note{font:400 .72rem/1.4 var(--f-mono);color:var(--muted);margin:16px 0 0}
@@ -153,20 +171,34 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     <h2>Drago One</h2>
     <p class="sec-intro"><span lang="it">Il data logger di Power-Tools: registra le grandezze del veicolo durante l'uso e le porta sul tuo computer per l'analisi, giro dopo giro.</span><span lang="en">The Power-Tools data logger: it records vehicle data while you drive and brings it to your computer for analysis, lap after lap.</span></p>
     <div class="product">
-      <figure class="shot main"><img src="drago-device.svg" alt="Drago One" width="640" height="400" loading="lazy"></figure>
+      <div class="live" role="img" aria-label="Drago One live">
+        <div class="lhd"><span>Drago One · <span lang="it">dati live</span><span lang="en">live data</span></span><span class="rec">REC</span></div>
+        <div class="lrow">
+          <div class="gauge">
+            <svg viewBox="0 0 200 120" aria-hidden="true"><path d="M20 110 A80 80 0 0 1 180 110" class="g-bg"/><path id="g-arc" d="M20 110 A80 80 0 0 1 180 110" class="g-fg" pathLength="100" stroke-dasharray="0 100"/></svg>
+            <div class="gv"><span id="d-rpm">0</span><small>rpm</small></div>
+          </div>
+          <div class="lstats">
+            <div class="ls"><div class="k"><span lang="it">Giro</span><span lang="en">Lap</span></div><div class="v" id="d-lap">0:00.00</div></div>
+            <div class="ls"><div class="k"><span lang="it">Migliore</span><span lang="en">Best</span></div><div class="v best" id="d-best">1:42.38</div></div>
+            <div class="ls"><div class="k"><span lang="it">Velocità</span><span lang="en">Speed</span></div><div class="v"><span id="d-spd">0</span><small>km/h</small></div></div>
+            <div class="ls"><div class="k"><span lang="it">Marcia</span><span lang="en">Gear</span></div><div class="v" id="d-gear">1</div></div>
+          </div>
+        </div>
+        <canvas id="d-trace" height="120" aria-hidden="true"></canvas>
+        <div class="legend"><span class="c1">RPM</span><span class="c2"><span lang="it">Velocità</span><span lang="en">Speed</span></span><span class="c3"><span lang="it">Acceleratore</span><span lang="en">Throttle</span></span></div>
+      </div>
       <div class="pinfo">
         <span class="tag live"><span lang="it">In sviluppo</span><span lang="en">In development</span></span>
         <ul class="specs big">
           <li><span lang="it">Acquisizione continua dei canali di bordo</span><span lang="en">Continuous acquisition of on-board channels</span></li>
-          <li><span lang="it">Display integrato con giri, tempo sul giro e marcia</span><span lang="en">Built-in display with rpm, lap time and gear</span></li>
+          <li><span lang="it">Tempi sul giro e confronto con il giro migliore</span><span lang="en">Lap times and comparison with your best lap</span></li>
           <li><span lang="it">Salvataggio delle sessioni su memoria interna</span><span lang="en">Sessions stored on internal memory</span></li>
           <li><span lang="it">Scarico e analisi dei dati con il software Power-Tools</span><span lang="en">Download and analysis with the Power-Tools software</span></li>
         </ul>
-        <figure class="shot"><img src="drago-data.svg" alt="Analisi dei dati Drago One" width="640" height="400" loading="lazy">
-          <figcaption><span lang="it">Analisi di un giro nel software Power-Tools</span><span lang="en">Lap analysis in the Power-Tools software</span></figcaption></figure>
       </div>
     </div>
-    <p class="demo-note"><span lang="it">Immagini dimostrative: il prodotto finale può essere diverso.</span><span lang="en">Demo images: the final product may differ.</span></p>
+    <p class="demo-note"><span lang="it">Dati simulati a scopo dimostrativo.</span><span lang="en">Simulated data for demonstration.</span></p>
   </section>
 
   <section id="download">
@@ -234,6 +266,47 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     $("gear").textContent=gear; $("spd").textContent=Math.round(rpm/1000*gear*6.2);
     $("wt").textContent=Math.round(87+2*Math.sin(t/7)); $("op").textContent=(3.4+rpm/8000).toFixed(1);
   },250);
+})();
+
+/* Drago One: pannello live simulato (giro su pista) */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var cv=$("d-trace"); if(!cv)return;
+  var c=cv.getContext("2d"),hist=[],lapStart=performance.now(),best=102.38,t=0;
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function fmt(s){var m=Math.floor(s/60),r=(s-m*60).toFixed(2);return m+":"+(r<10?"0":"")+r}
+  function sim(t){                                  // un giro: rettilinei, staccate, curve
+    var ph=(t*0.05)%1, seg=Math.floor(ph*6), u=(ph*6)%1;
+    var thr=u<0.72?1:(u<0.8?0.0:0.35);
+    var spd=thr>0.9?90+120*Math.pow(u/0.72,0.7):(u<0.8?210-150*(u-0.72)/0.08:65+20*Math.sin(u*9));
+    spd+= (seg%2?-12:8);
+    var gear=Math.max(2,Math.min(6,Math.floor((spd+6)/38)+1));
+    var lo=(gear-1)*38-6, rpm=Math.round(Math.max(2800,Math.min(8700,3600+(spd-lo)/44*5000))+Math.random()*40);
+    return {thr:thr,spd:Math.max(40,spd),gear:gear,rpm:rpm};
+  }
+  function size(){cv.width=cv.clientWidth*(devicePixelRatio||1);cv.height=120*(devicePixelRatio||1);c.setTransform(devicePixelRatio||1,0,0,devicePixelRatio||1,0,0)}
+  function draw(){
+    var w=cv.clientWidth,h=120;c.clearRect(0,0,w,h);
+    c.strokeStyle="rgba(255,255,255,.05)";c.lineWidth=1;for(var x=0;x<w;x+=40){c.beginPath();c.moveTo(x,0);c.lineTo(x,h);c.stroke()}
+    [["rpm",9000,"#ff4d5e",true],["spd",240,"#e6eaea",false],["thr",1.2,"#3ddc84",false]].forEach(function(k){
+      c.beginPath();for(var i=0;i<hist.length;i++){var x=w-(hist.length-1-i)*2,y=h-6-(hist[i][k[0]]/k[1])*(h-14);i?c.lineTo(x,y):c.moveTo(x,y)}
+      c.strokeStyle=k[2];c.lineWidth=1.6;c.stroke();
+      if(k[3]&&hist.length){c.lineTo(w,h);c.lineTo(w-(hist.length-1)*2,h);c.closePath();var g=c.createLinearGradient(0,0,0,h);g.addColorStop(0,"rgba(255,77,94,.28)");g.addColorStop(1,"rgba(255,77,94,0)");c.fillStyle=g;c.fill()}
+    });
+  }
+  function step(){
+    t+=0.05;var d=sim(t);hist.push(d);if(hist.length>cv.clientWidth/2+2)hist.shift();
+    $("d-rpm").textContent=d.rpm;$("d-spd").textContent=Math.round(d.spd);$("d-gear").textContent=d.gear;
+    $("g-arc").setAttribute("stroke-dasharray",(d.rpm/9000*100).toFixed(1)+" 100");
+    var lap=(performance.now()-lapStart)/1000;
+    if(lap>best+0.9+Math.random()*1.5){if(lap<best+1.2){best=lap;$("d-best").textContent=fmt(best)}lapStart=performance.now();lap=0}
+    $("d-lap").textContent=fmt(lap);
+    draw();
+  }
+  size();addEventListener("resize",function(){size();draw()});
+  for(var i=0;i<300;i++){t+=0.05;hist.push(sim(t))}
+  if(reduce){step();return}
+  setInterval(step,50);
 })();
 </script>
 </body>
