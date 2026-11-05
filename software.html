@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Software Power-Tools – Power ATS</title>
-<link rel="icon" href="power-patch.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 <meta name="description" content="Power-Tools: il software di Power Advanced Technology Solutions per analizzare i dati del veicolo, simulare le modifiche, configurare gli strumenti e seguire i dati dal vivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -55,6 +57,7 @@ h2{font:600 1.8rem/1.15 var(--f-display);margin:8px 0 14px;text-wrap:balance}
 .area p{color:var(--muted);margin:0}
 .shot{margin:0;background:var(--trace-bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .shot img{display:block;width:100%;height:auto}
+.shot.wide{margin-top:32px}
 .demo-note{font:400 .72rem/1.4 var(--f-mono);color:var(--muted);margin:0;padding-block:0 24px}
 
 footer{border-top:1px solid var(--line);padding-block:24px 36px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -77,7 +80,8 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     </a>
     <div class="right">
       <nav aria-label="Menu">
-        <a href="sito.html#power-tools">Power-Tools</a>
+        <a href="software.html" aria-current="page">Power-Tools</a>
+        <a href="sito.html#prodotti"><span lang="it">Prodotti</span><span lang="en">Products</span></a>
         <a href="sito.html#download">Download</a>
         <a href="sito.html#shop">Shop</a>
         <a href="sito.html#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
@@ -123,10 +127,22 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     <div class="area">
       <div>
         <div class="eyebrow"><span lang="it">Dispositivi</span><span lang="en">Devices</span></div>
-        <h2><span lang="it">Strumenti pronti per la pista</span><span lang="en">Instruments ready for the track</span></h2>
-        <p><span lang="it">Prepara la configurazione degli strumenti dal computer e guarda come si comporterà il display, con le luci di cambiata in azione.</span><span lang="en">Prepare your instruments' configuration from the computer and see how the display will behave, with the shift lights in action.</span></p>
+        <h2><span lang="it">Dal computer allo strumento</span><span lang="en">From the computer to the instrument</span></h2>
+        <p><span lang="it">Collega uno strumento supportato: il programma lo riconosce, salva una copia di sicurezza della sua configurazione e ne mostra impostazioni e canali. Componi le pagine del display, simula i canali e scarica le sessioni registrate. La galleria dice lo stato di ogni pannello, compresi quelli ancora da confermare sullo strumento.</span><span lang="en">Connect a supported instrument: the program identifies it, saves a backup of its configuration and shows its settings and channels. Build the display pages, simulate channels and download recorded sessions. The gallery states the status of each panel, including those still to be confirmed on the instrument.</span></p>
       </div>
-      <figure class="shot"><picture lang="it"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="Anteprima simulata di un display: valore di temperatura, indicatore del regime e luci di cambiata che si accendono e si spengono." width="650" height="262" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="Simulated display preview: temperature value, engine speed indicator and shift lights turning on and off." width="650" height="262" loading="lazy" decoding="async"></picture></figure>
+      <figure class="shot"><picture lang="it"><source srcset="software/galleria.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/galleria-fermo.webp" alt="Galleria dei pannelli del programma, categoria regime e cambiata: barre del regime, anelli, marcia e luci di cambiata con valori simulati in movimento; ogni scheda indica che resta da confermare sullo strumento." width="900" height="343" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/galleria.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/galleria-fermo.webp" alt="The program's panel gallery, engine speed and shift category: speed bars, rings, gear and shift lights with moving simulated values; each card says it is still to be confirmed on the instrument." width="900" height="343" loading="lazy" decoding="async"></picture></figure>
+    </div>
+    <figure class="shot wide"><picture lang="it"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="Editor del display del programma con una pagina composta: barra del regime, marcia, scarto sul giro e riquadri motore con valori dimostrativi, elenco delle pagine e proprietà dell'oggetto scelto." width="1200" height="436" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="The program's display editor with a composed page: engine speed bar, gear, lap delta and engine boxes with demonstration values, page list and properties of the selected object." width="1200" height="436" loading="lazy" decoding="async"></picture></figure>
+  </section>
+
+  <section>
+    <div class="area">
+      <div>
+        <div class="eyebrow"><span lang="it">CAN Analyzer</span><span lang="en">CAN Analyzer</span></div>
+        <h2><span lang="it">Il bus CAN in chiaro</span><span lang="en">The CAN bus in plain view</span></h2>
+        <p><span lang="it">Segui il traffico del bus in tempo reale: ogni messaggio con ora, identificativo e byte, con i valori che cambiano evidenziati a colori.</span><span lang="en">Follow bus traffic in real time: every message with time, identifier and bytes, with changing values highlighted in colour.</span></p>
+      </div>
+      <figure class="shot"><picture lang="it"><source srcset="software/can.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/can-fermo.webp" alt="Traffico CAN dal vivo: righe di messaggi con ora, identificativo e byte colorati che scorrono." width="920" height="493" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/can.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/can-fermo.webp" alt="Live CAN traffic: scrolling message rows with time, identifier and coloured bytes." width="920" height="493" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
 
@@ -135,13 +151,13 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
       <div>
         <div class="eyebrow"><span lang="it">Dati dal vivo</span><span lang="en">Live data</span></div>
         <h2><span lang="it">Mentre la vettura gira</span><span lang="en">While the vehicle runs</span></h2>
-        <p><span lang="it">Componi il tuo cruscotto con indicatori e grafici e segui i dati in tempo reale.</span><span lang="en">Build your own dashboard with gauges and charts and follow the data in real time.</span></p>
+        <p><span lang="it">Componi il tuo cruscotto con indicatori, grafici e un riquadro video in streaming e segui i dati in tempo reale.</span><span lang="en">Build your own dashboard with gauges, charts and a streaming video panel and follow the data in real time.</span></p>
       </div>
-      <figure class="shot"><picture lang="it"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Cruscotto dal vivo con regime, velocità, angolo di piega, grafici di velocità e sospensioni e altri indicatori in movimento." width="1000" height="567" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Live dashboard with engine speed, speed, lean angle, speed and suspension charts and other moving gauges." width="1000" height="567" loading="lazy" decoding="async"></picture></figure>
+      <figure class="shot"><picture lang="it"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Cruscotto dal vivo con regime, velocità, angolo di piega, grafici di velocità e sospensioni, altri indicatori in movimento e un riquadro con un video sintetico di prova." width="1000" height="567" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Live dashboard with engine speed, speed, lean angle, speed and suspension charts, other moving gauges and a panel showing a synthetic test video." width="1000" height="567" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
 
-  <p class="demo-note"><span lang="it">Schermate del programma con dati dimostrativi, interfaccia in italiano.</span><span lang="en">Program screens with demonstration data, Italian interface shown.</span></p>
+  <p class="demo-note"><span lang="it">Schermate del programma con dati dimostrativi, interfaccia in italiano. Il video nel riquadro è generato al computer, non è una ripresa reale.</span><span lang="en">Program screens with demonstration data, Italian interface shown. The video in the panel is computer-generated, not real footage.</span></p>
 
   <footer>
     <span>© 2026 Power Advanced Technology Solutions</span>

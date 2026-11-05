@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Power ATS</title>
-<link rel="icon" href="power-patch.svg" type="image/svg+xml">
-<meta name="description" content="Power Advanced Technology Solutions – Power-Tools: data logger e dash per l'acquisizione e la visualizzazione dei dati del veicolo.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="description" content="Power Advanced Technology Solutions: Drago One e Dash, data logger e dash per l'acquisizione e la visualizzazione dei dati del veicolo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -135,7 +137,8 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     </a>
     <div class="right">
       <nav aria-label="Menu">
-        <a href="#power-tools">Power-Tools</a>
+        <a href="software.html">Power-Tools</a>
+        <a href="#prodotti"><span lang="it">Prodotti</span><span lang="en">Products</span></a>
         <a href="#download">Download</a>
         <a href="#shop">Shop</a>
         <a href="#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
@@ -148,16 +151,16 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
 
   <div class="hero">
     <div>
-      <div class="eyebrow"><span lang="it">Progetto Power-Tools</span><span lang="en">The Power-Tools project</span></div>
+      <div class="eyebrow">Power Advanced Technology Solutions</div>
       <h1><span lang="it">Registra ogni dato. Leggilo a colpo d'occhio.</span><span lang="en">Log every value. Read it at a glance.</span></h1>
-      <p class="lead"><span lang="it">Power-Tools è il progetto di Power Advanced Technology Solutions dedicato all'acquisizione dati sul veicolo: un data logger per registrare le grandezze di bordo e un dash per visualizzarle in tempo reale.</span><span lang="en">Power-Tools is the Power Advanced Technology Solutions project for in-vehicle data acquisition: a data logger that records on-board channels and a dash that shows them in real time.</span></p>
+      <p class="lead"><span lang="it">Acquisizione dati sul veicolo: Drago One, un data logger per registrare le grandezze di bordo, e Dash, per visualizzarle in tempo reale.</span><span lang="en">In-vehicle data acquisition: Drago One, a data logger that records on-board channels, and Dash, which shows them in real time.</span></p>
       <div class="btns">
-        <a class="btn primary" href="#power-tools"><span lang="it">Scopri i prodotti</span><span lang="en">Discover the products</span></a>
+        <a class="btn primary" href="#prodotti"><span lang="it">Scopri i prodotti</span><span lang="en">Discover the products</span></a>
         <a class="btn" href="#contatti"><span lang="it">Contattaci</span><span lang="en">Get in touch</span></a>
       </div>
     </div>
-    <div class="dash" role="img" aria-label="Power Dash">
-      <div class="hd"><span>Power Dash · <span lang="it">esempio</span><span lang="en">sample</span></span><span class="rec">LOG</span></div>
+    <div class="dash" role="img" aria-label="Dash">
+      <div class="hd"><span>Dash · <span lang="it">esempio</span><span lang="en">sample</span></span><span class="rec">LOG</span></div>
       <div class="ch big"><div class="k"><span lang="it">Giri motore</span><span lang="en">Engine speed</span></div><div class="v"><span id="rpm">6450</span><small>rpm</small></div><div class="bar"><i id="rpmbar"></i></div></div>
       <div class="ch"><div class="k"><span lang="it">Velocità</span><span lang="en">Speed</span></div><div class="v"><span id="spd">142</span><small>km/h</small></div></div>
       <div class="ch"><div class="k"><span lang="it">Marcia</span><span lang="en">Gear</span></div><div class="v" id="gear">4</div></div>
@@ -166,10 +169,10 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     </div>
   </div>
 
-  <section id="power-tools">
-    <div class="eyebrow"><span lang="it">Il prodotto</span><span lang="en">The product</span></div>
+  <section id="prodotti">
+    <div class="eyebrow"><span lang="it">Prodotti</span><span lang="en">Products</span></div>
     <h2>Drago One</h2>
-    <p class="sec-intro"><span lang="it">Il data logger di Power-Tools: registra le grandezze del veicolo durante l'uso e le porta sul tuo computer per l'analisi, giro dopo giro.</span><span lang="en">The Power-Tools data logger: it records vehicle data while you drive and brings it to your computer for analysis, lap after lap.</span></p>
+    <p class="sec-intro"><span lang="it">Il data logger di Power Advanced Technology Solutions: registra le grandezze del veicolo durante l'uso e le porta sul tuo computer per l'analisi, giro dopo giro.</span><span lang="en">The Power Advanced Technology Solutions data logger: it records vehicle data while you drive and brings it to your computer for analysis, lap after lap.</span></p>
     <div class="product">
       <div class="live" role="img" aria-label="Drago One live">
         <div class="lhd"><span>Drago One · <span lang="it">dati live</span><span lang="en">live data</span></span><span class="rec">REC</span></div>
@@ -194,7 +197,7 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
           <li><span lang="it">Acquisizione continua dei canali di bordo</span><span lang="en">Continuous acquisition of on-board channels</span></li>
           <li><span lang="it">Tempi sul giro e confronto con il giro migliore</span><span lang="en">Lap times and comparison with your best lap</span></li>
           <li><span lang="it">Salvataggio delle sessioni su memoria interna</span><span lang="en">Sessions stored on internal memory</span></li>
-          <li><span lang="it">Scarico e analisi dei dati con il software Power-Tools</span><span lang="en">Download and analysis with the Power-Tools software</span></li>
+          <li><span lang="it">Scarico dei dati sul computer</span><span lang="en">Data download to your computer</span></li>
         </ul>
       </div>
     </div>
@@ -207,8 +210,8 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     <p class="sec-intro"><span lang="it">Da qui sarà possibile scaricare l'ultima versione del software, i firmware e le note di rilascio.</span><span lang="en">This is where you will download the latest software, firmware and release notes.</span></p>
     <div class="grid3">
       <div class="item"><a class="tag" href="download/PowerTools-setup.exe"><span lang="it">Scarica</span><span lang="en">Download</span></a><h3><span lang="it">Software Power-Tools</span><span lang="en">Power-Tools software</span></h3><p><span lang="it">Installer per Windows e note di rilascio di ogni versione.</span><span lang="en">Windows installer and release notes for every version.</span></p><p><a href="software.html"><span lang="it">Scopri il software</span><span lang="en">About the software</span></a></p></div>
-      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Firmware</h3><p><span lang="it">Aggiornamenti per Drago One e Dash, installabili dal software.</span><span lang="en">Updates for Drago One and Dash, installed from the software.</span></p></div>
-      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3><span lang="it">Documentazione</span><span lang="en">Documentation</span></h3><p><span lang="it">Manuali di Drago One e Dash, guida al software e domande frequenti.</span><span lang="en">Drago One and Dash manuals, software guide and FAQ.</span></p></div>
+      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Firmware</h3><p><span lang="it">Aggiornamenti per Drago One e Dash.</span><span lang="en">Updates for Drago One and Dash.</span></p></div>
+      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3><span lang="it">Documentazione</span><span lang="en">Documentation</span></h3><p><span lang="it">Manuali di Drago One e Dash e domande frequenti.</span><span lang="en">Drago One and Dash manuals and FAQ.</span></p></div>
     </div>
   </section>
 
@@ -217,8 +220,8 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     <h2><span lang="it">Shop online</span><span lang="en">Online shop</span></h2>
     <p class="sec-intro"><span lang="it">Lo shop per l'acquisto di Drago One, Dash e accessori è in preparazione. Per informazioni o preordini scrivici.</span><span lang="en">The shop for Drago One, Dash and accessories is being prepared. Write to us for information or pre-orders.</span></p>
     <div class="grid3">
-      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Drago One</h3><p><span lang="it">Il logger con software di analisi incluso.</span><span lang="en">The logger, analysis software included.</span></p></div>
-      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Power Dash</h3><p><span lang="it">Il display da cruscotto pronto da installare.</span><span lang="en">The dashboard display, ready to install.</span></p></div>
+      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Drago One</h3><p><span lang="it">Il data logger.</span><span lang="en">The data logger.</span></p></div>
+      <div class="item"><span class="tag"><span lang="it">Prossimamente</span><span lang="en">Coming soon</span></span><h3>Dash</h3><p><span lang="it">Il display da cruscotto pronto da installare.</span><span lang="en">The dashboard display, ready to install.</span></p></div>
       <div class="item"><span class="tag"><span lang="it">Su richiesta</span><span lang="en">On request</span></span><h3><span lang="it">Kit e accessori</span><span lang="en">Kits and accessories</span></h3><p><span lang="it">Drago One e Dash insieme, cablaggi e supporti.</span><span lang="en">Drago One and Dash together, harnesses and mounts.</span></p></div>
     </div>
   </section>
@@ -227,7 +230,7 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
     <div class="eyebrow"><span lang="it">Contatti</span><span lang="en">Contact</span></div>
     <h2><span lang="it">Parliamo del tuo progetto</span><span lang="en">Let's talk about your project</span></h2>
     <div class="contact">
-      <p class="sec-intro" style="margin:0"><span lang="it">Per informazioni su Power-Tools, collaborazioni o richieste di sviluppo su misura, scrivici: rispondiamo entro un giorno lavorativo.</span><span lang="en">For information on Power-Tools, partnerships or custom development, write to us: we reply within one working day.</span></p>
+      <p class="sec-intro" style="margin:0"><span lang="it">Per informazioni su prodotti e software, collaborazioni o richieste di sviluppo su misura, scrivici: rispondiamo entro un giorno lavorativo.</span><span lang="en">For information on products and software, partnerships or custom development, write to us: we reply within one working day.</span></p>
       <dl>
         <dt><span lang="it">Società</span><span lang="en">Company</span></dt><dd>Power Advanced Technology Solutions</dd>
         <dt>Email</dt><dd>info@power-ats.com</dd>
@@ -238,7 +241,7 @@ html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display
 
   <footer>
     <span>© 2026 Power Advanced Technology Solutions</span>
-    <span>Power-Tools</span>
+    <span>www.power-ats.com</span>
   </footer>
 </div>
 

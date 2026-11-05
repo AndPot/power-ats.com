@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="power-patch.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 <title>Power ATS</title>
-<meta name="description" content="Power Advanced Technology Solutions – Power-Tools">
+<meta name="description" content="Power Advanced Technology Solutions">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one dark screen. Intro: a precise oscilloscope beam sweeps across and reveals the logo behind its head; the pulse then returns periodically and lights the wordmark; then a CAN bus runs along the bottom. Single dark look by design. */
@@ -175,7 +177,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
 
 <g clip-path="url(#wordclip)"><rect id="sheen-r" x="-200" y="214" width="70" height="80" fill="url(#sheen)"/></g></svg></a>
   <div class="after" id="after">
-    <div class="tag">Power-Tools · Logger &amp; Dash</div>
+    <div class="tag">Drago One · Dash</div>
     <a class="enter" href="sito.html"><span lang="it">Entra nel sito</span><span lang="en">Enter the site</span> <span aria-hidden="true">→</span></a>
   </div>
 </main>
@@ -210,7 +212,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
     beamY=L.top+(291-214)/112*L.height;
     spikeX=L.left+(486-214)/440*L.width;
   }
-  /* traccia: piatta, con l'impulso del logo Power-Tools */
+  /* traccia: piatta, con l'impulso del logo */
   function traceY(x){
     var u=(x-spikeX)/(L.width/440)/1.6, a=L.height/112*2.2;
     var k=[[-18,0],[-12,3],[-4,-9],[5,8],[13,-6],[19,2],[24,0]];
