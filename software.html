@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Software Power-Tools – Power ATS</title>
+<link rel="icon" href="power-patch.svg" type="image/svg+xml">
+<meta name="description" content="Power-Tools: il software di Power Advanced Technology Solutions per analizzare i dati del veicolo, simulare le modifiche, configurare gli strumenti e seguire i dati dal vivo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Stessi colori, caratteri e componenti di sito.html */
+:root{
+  --bg:#f3f4f2; --surface:#ffffff; --fg:#16191c; --muted:#5b6268; --line:#d6dad9;
+  --accent:#c8102e; --accent-ink:#ffffff; --trace-bg:#14181b;
+  --f-display:"Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101315; --surface:#171b1e; --fg:#e6eaea; --muted:#99a2a6; --line:#2a3135;
+  --accent:#ff4d5e; --accent-ink:#14181b; --trace-bg:#0b0e10; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101315; --surface:#171b1e; --fg:#e6eaea; --muted:#99a2a6; --line:#2a3135;
+  --accent:#ff4d5e; --accent-ink:#14181b; --trace-bg:#0b0e10; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{display:block;height:96px;width:auto}
+@media (max-width:600px){.brand img{height:70px}}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+.right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+
+.intro{padding-block:56px 48px;max-width:44em}
+.eyebrow{font:500 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(2.2rem,5vw,3.4rem)/1.05 var(--f-display);margin:14px 0 18px;text-wrap:balance;letter-spacing:.01em}
+.lead{color:var(--muted);font-size:1.08rem;max-width:34em;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 18px;border-radius:4px;font:600 .92rem/1 var(--f-body);text-decoration:none;border:1px solid var(--line)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+section{padding-block:56px;border-top:1px solid var(--line)}
+h2{font:600 1.8rem/1.15 var(--f-display);margin:8px 0 14px;text-wrap:balance}
+.area{display:grid;grid-template-columns:1fr 1.7fr;gap:36px;align-items:center}
+.area>*{min-width:0}
+.area p{color:var(--muted);margin:0}
+.shot{margin:0;background:var(--trace-bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.shot img{display:block;width:100%;height:auto}
+.demo-note{font:400 .72rem/1.4 var(--f-mono);color:var(--muted);margin:0;padding-block:0 24px}
+
+footer{border-top:1px solid var(--line);padding-block:24px 36px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){.area{grid-template-columns:1fr;gap:20px}}
+
+/* Lingua: ogni testo esiste in IT e EN, si mostra quello della lingua scelta */
+html[data-lang="en"] [lang="it"], html:not([data-lang="en"]) [lang="en"]{display:none!important}
+.lang{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.lang button{font:500 .74rem/1 var(--f-mono);letter-spacing:.08em;padding:7px 10px;background:transparent;color:var(--muted);border:0;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="sito.html" aria-label="Power – home">
+      <img src="power-patch.svg" alt="Power – Advanced technology solutions" width="277" height="96">
+    </a>
+    <div class="right">
+      <nav aria-label="Menu">
+        <a href="sito.html#power-tools">Power-Tools</a>
+        <a href="sito.html#download">Download</a>
+        <a href="sito.html#shop">Shop</a>
+        <a href="sito.html#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" id="lang-it" data-l="it">IT</button><button type="button" id="lang-en" data-l="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="eyebrow"><span lang="it">Software Power-Tools</span><span lang="en">Power-Tools software</span></div>
+    <h1><span lang="it">Dai dati della vettura alla decisione.</span><span lang="en">From vehicle data to decisions.</span></h1>
+    <p class="lead"><span lang="it">Un unico programma per Windows per leggere una sessione, provare una modifica prima di farla, preparare gli strumenti e seguire i dati mentre la vettura gira.</span><span lang="en">One Windows program to read a session, try a change before making it, prepare your instruments and follow the data while the vehicle runs.</span></p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/AndPot/PowerToolsUpdate/releases/download/v52.210/PowerTools-v52.210-setup.exe"><span lang="it">Scarica</span><span lang="en">Download</span></a>
+    </div>
+  </div>
+
+  <section>
+    <div class="area">
+      <div>
+        <div class="eyebrow"><span lang="it">Analisi dei dati</span><span lang="en">Data analysis</span></div>
+        <h2><span lang="it">Ogni giro a confronto</span><span lang="en">Every lap compared</span></h2>
+        <p><span lang="it">Apri una sessione, sovrapponi i giri e scopri dove si guadagna e dove si perde: tracce, delta e curve scorrono insieme sotto lo stesso cursore.</span><span lang="en">Open a session, overlay your laps and see where time is gained or lost: traces, delta and corners move together under one cursor.</span></p>
+      </div>
+      <figure class="shot"><picture lang="it"><source srcset="software/analisi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/analisi-fermo.webp" alt="Il programma con tre giri sovrapposti: tabella dei giri, tracce, delta di tempo e tabella delle curve, con il cursore che percorre il giro." width="760" height="770" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/analisi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/analisi-fermo.webp" alt="The program with three overlaid laps: lap table, traces, time delta and corner table, with the cursor moving along the lap." width="760" height="770" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="area">
+      <div>
+        <div class="eyebrow"><span lang="it">Predictive</span><span lang="en">Predictive</span></div>
+        <h2><span lang="it">Prova prima di cambiare</span><span lang="en">Try before you change</span></h2>
+        <p><span lang="it">Cambia un valore, per esempio il rapporto finale, e confronta il risultato con la base prima di toccare la vettura.</span><span lang="en">Change a value, such as the final drive, and compare the result with the baseline before touching the vehicle.</span></p>
+      </div>
+      <figure class="shot"><picture lang="it"><source srcset="software/predictive.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/predictive-fermo.webp" alt="Confronto tra la base e una variante con corona diversa: tabella dei risultati e tracce di velocità con il cursore in movimento." width="960" height="435" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/predictive.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/predictive-fermo.webp" alt="Comparison between the baseline and a variant with a different sprocket: results table and speed traces with a moving cursor." width="960" height="435" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="area">
+      <div>
+        <div class="eyebrow"><span lang="it">Dispositivi</span><span lang="en">Devices</span></div>
+        <h2><span lang="it">Strumenti pronti per la pista</span><span lang="en">Instruments ready for the track</span></h2>
+        <p><span lang="it">Prepara la configurazione degli strumenti dal computer e guarda come si comporterà il display, con le luci di cambiata in azione.</span><span lang="en">Prepare your instruments' configuration from the computer and see how the display will behave, with the shift lights in action.</span></p>
+      </div>
+      <figure class="shot"><picture lang="it"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="Anteprima simulata di un display: valore di temperatura, indicatore del regime e luci di cambiata che si accendono e si spengono." width="650" height="262" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/dispositivi.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/dispositivi-fermo.webp" alt="Simulated display preview: temperature value, engine speed indicator and shift lights turning on and off." width="650" height="262" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="area">
+      <div>
+        <div class="eyebrow"><span lang="it">Dati dal vivo</span><span lang="en">Live data</span></div>
+        <h2><span lang="it">Mentre la vettura gira</span><span lang="en">While the vehicle runs</span></h2>
+        <p><span lang="it">Componi il tuo cruscotto con indicatori e grafici e segui i dati in tempo reale.</span><span lang="en">Build your own dashboard with gauges and charts and follow the data in real time.</span></p>
+      </div>
+      <figure class="shot"><picture lang="it"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Cruscotto dal vivo con regime, velocità, angolo di piega, grafici di velocità e sospensioni e altri indicatori in movimento." width="1000" height="567" loading="lazy" decoding="async"></picture><picture lang="en"><source srcset="software/live.webp" media="(prefers-reduced-motion: no-preference)"><img src="software/live-fermo.webp" alt="Live dashboard with engine speed, speed, lean angle, speed and suspension charts and other moving gauges." width="1000" height="567" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </section>
+
+  <p class="demo-note"><span lang="it">Schermate del programma con dati dimostrativi, interfaccia in italiano.</span><span lang="en">Program screens with demonstration data, Italian interface shown.</span></p>
+
+  <footer>
+    <span>© 2026 Power Advanced Technology Solutions</span>
+    <span>Power-Tools</span>
+  </footer>
+</div>
+
+<script>
+/* Lingua: scelta salvata nel browser, altrimenti quella del sistema (come sito.html) */
+(function(){
+  var root=document.documentElement, k="power-lang", l=null;
+  try{l=localStorage.getItem(k)}catch(e){}
+  if(l!=="it"&&l!=="en")l=(navigator.language||"it").toLowerCase().indexOf("it")===0?"it":"en";
+  function set(x){root.setAttribute("data-lang",x);root.lang=x;
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===x)});
+    try{localStorage.setItem(k,x)}catch(e){}}
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.l)})});
+  set(l);
+})();
+</script>
+</body>
+</html>
